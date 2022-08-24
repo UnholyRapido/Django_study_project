@@ -7,7 +7,7 @@ from .models import News
 # Create your views here.
 def index(request):
     # print(request)
-    news = News.objects.order_by('-created_at')
+    news = News.objects.all()  # order_by('-created_at') можно использовать сортировку тут вместа мета класса в модуле
     # res = '<h1>Список новостей</h1>'
     # for item in news:
     #     res += f'<div>\n<p>{item.title}</p>\n<p>{item.content}</p>\n</div>\n<hr>'
