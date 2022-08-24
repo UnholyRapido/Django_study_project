@@ -12,7 +12,7 @@ class News(models.Model):
     is_published = models.BooleanField(default=True, verbose_name='Опубликовано')
     category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True, verbose_name='Категория')
 
-    def __str__(self):
+    def __str__(self):  # строковое представление объекта
         return f'{self.title}: {self.content}'
 
     class Meta:
