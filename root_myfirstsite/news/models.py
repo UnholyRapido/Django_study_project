@@ -13,7 +13,7 @@ class News(models.Model):
     category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True, verbose_name='Категория')
 
     def __str__(self):  # строковое представление объекта
-        return f'{self.title}: {self.content}'
+        return self.title
 
     class Meta:
         verbose_name = 'Новость'
