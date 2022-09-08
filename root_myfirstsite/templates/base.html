@@ -11,14 +11,18 @@
 
 {% include 'inc/_nav.html'%}
 
-<div class="container">
+<div class="container text-center">
   <h1>{% block pagename %}{% endblock %}</h1>
 </div>
 
 <div class="container mt-3">
   <div class="row">
-    {% block sidebar %}sidebar{% endblock %}
-    {% block content %}content{% endblock %}
+    <div class="col-md-3">
+      {% block sidebar %}sidebar{% endblock %}
+    </div>
+    <div class="col-md-9">
+      {% block content %}content{% endblock %}
+    </div>
   </div>
 </div>
 

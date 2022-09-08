@@ -12,11 +12,9 @@ def index(request):
     # for item in news:
     #     res += f'<div>\n<p>{item.title}</p>\n<p>{item.content}</p>\n</div>\n<hr>'
     # return HttpResponse(res)
-    categories = Category.objects.all()
+    # categories = Category.objects.all()
     return render(request, 'news/index.html', {'news': news,
-                                               'title': 'Список новостей',
-                                               'categories': categories
-                                               })  # для большого контекста можно создать переменную со словарём
+                                               'title': 'Список новостей'})  # для большого контекста можно создать переменную со словарём
 
 def test(requets):
     # name = input('enter your name: ')
@@ -25,10 +23,7 @@ def test(requets):
 
 def get_category(request, category_id):
     news = News.objects.filter(category_id=category_id)
-    categories = Category.objects.all()
     category = Category.objects.get(pk=category_id)
     context = {'news': news,
-               "categories": categories,
-               'category': category
-               }
+               'category': category}
     return render(request, 'news/category.html', context)
